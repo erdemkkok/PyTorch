@@ -6,11 +6,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 training_data = datasets.FashionMNIST(
-    root="data",
+    root="data",# İndirilecek dosya dizin adı
     train=True,
     download=True,
     transform=ToTensor()
 )
+print(training_data[0][1])# Label numarası
 a=training_data[8][0][0].numpy()
 b=np.array(a)
 plt.imshow(b)
@@ -99,3 +100,15 @@ from torch.utils.data import DataLoader
 train_dataloader = DataLoader(training_data, batch_size=64, shuffle=True)
 print(train_dataloader)
 test_dataloader = DataLoader(test_data, batch_size=64, shuffle=True)
+
+
+# Display image and label.
+print("asd",next(iter(train_dataloader))[1][0])#Class elde edildi
+train_features, train_labels = next(iter(train_dataloader))
+print(f"Feature batch shape: {train_features.size()}")
+print(f"Labels batch shape: {train_labels.size()}")
+img = train_features[0].squeeze()
+label = train_labels[0]
+plt.imshow(img, cmap="gray")
+plt.show()
+print(f"Label: {label}")
