@@ -6,4 +6,5 @@
 
 # Usage
 
-- python3 torcher.py
+- python3 dataset_torch.py  # Veri ön işleme ile ilgili örnekleri içerir.
+- python3 neurel_torch.py   # Nöral Ağ örneklerini içerir.

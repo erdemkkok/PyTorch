@@ -82,8 +82,7 @@ class CustomImageDataset(Dataset):
     
 image=CustomImageDataset(annotations_file='/home/erdem/Desktop/Tensor_workspace/image/labels.csv',img_dir='/home/erdem/Desktop/Tensor_workspace/image/foto')
 import numpy as np
-import cv2 
-print("TRY",image[4])
+print("TRY",image[4][1])#Class eger sadece image [4] olsaydı image
 t=image[8][0][0]
 p=image[8][0][0].numpy()
 s=np.array(p)
