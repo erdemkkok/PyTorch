@@ -74,3 +74,12 @@ logits = seq_modules(input_image)
 
 softmax = nn.Softmax(dim=1)# dim parametresi değerler toplamının 1 olması gerektiğini belirtir.
 pred_probab = softmax(logits)
+
+
+print("-*-*-*-*-*-* MODEL PARAMETERS")
+
+
+print(f"Model structure: {model}\n\n")
+
+for name, param in model.named_parameters():
+    print(f"Layer: {name} | Size: {param.size()} | Values : {param[:2]} \n")
